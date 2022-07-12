@@ -5,7 +5,7 @@ require ('dotenv').config()
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    user: './simulations/user.test.js' ,
+    customer: './simulations/customer.test.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
