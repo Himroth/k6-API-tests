@@ -1,8 +1,9 @@
 import { group } from 'k6';
 import Login from '../requests/login.request'
-import customerPost from '../requests/customerPost.request'
-import customerData from '../data/customer.json'
+import produtoData from '../data/produto.json'
 import data from '../data/usuarios.json'
+import Produto from '../requests/pruduto.request'
+
 
 /* export const options = {
     stages: [
@@ -19,16 +20,15 @@ import data from '../data/usuarios.json'
 export default function () {
     
     let login = new Login()
-    let customer = new customerPost()
+    let produto = new Produto()
 
-        group('login and get token', () => {
+    group('login and get token', () => {
         login.access(data.user.user, data.user.pass)          //Chamando metodo access e passar user e pass
 
     })
 
-
-    group('criar cliente', () => {
-        customer.postCustomer(customerData.address.id, customerData.data.email, customerData.data.firstName, customerData.data.lastName, customerData.data.phone, login.getToken())
+    group('criar produto', () => {
+        produto.postProduto(produtoData.description, produtoData.itemPrice, produtoData.name, login.getToken())
     })
 
 }

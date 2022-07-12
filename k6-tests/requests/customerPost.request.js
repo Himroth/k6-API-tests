@@ -22,6 +22,6 @@ export default class customerPost {
                 }
             }
         )
-        check(response, { 'Post deve retornar status 201': r => r && r.status === 201 })
+        check(response, { 'Post cliente deve retornar status 201': r => r && r.status === 201 })
     }
 }
