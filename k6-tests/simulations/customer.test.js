@@ -4,17 +4,17 @@ import customerPost from '../requests/customerPost.request'
 import customerData from '../data/customer.json'
 import data from '../data/usuarios.json'
 
-/* export const options = {
+ export const options = {
     stages: [
-        { duration: '10s', target: 10 },
-        { duration: '5s', target: 50 },
-        { duration: '10s', target: 10 },
-        { duration: '5s', target: 0 },
+        { duration: '15s', target: 10 },
+        { duration: '10s', target: 50 },
+        { duration: '15s', target: 10 },
+        { duration: '10s', target: 0 },
     ],
     thresholds: {
         http_req_duration: ['p(99) < 1000']
     }
-} */
+} 
 
 export default function () {
     
